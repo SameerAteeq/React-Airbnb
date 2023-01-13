@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { blogList } from "./data.js";
+import { motion, Variants } from "framer-motion";
+import Home from "./components/home/index.js";
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Step1 from "./components/home/step1/index.js";
+import Structure from "./components/home/step1/structure/index.js";
+import PrivacyType from "./components/home/step1/privacyType/index.js";
+import Location from "./components/home/step1/location/index.js";
+import Floor from "./components/home/step1/floor/index.js";
+import Step2 from "./components/home/step2/index.js";
+import Animities from "./components/home/step2/amenities/index.js";
+import Photos from "./components/home/step2/photos/index.js";
+import Title from "./components/home/step2/title/index.js";
+import Description from "./components/home/step2/description/index.js";
+import Step3 from "./components/home/step3/index.js";
+import Visibility from "./components/home/step3/visibility/index.js";
+import Price from "./components/home/step3/price/index.js";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/step1">
+            <Route index element={<Step1 />} />
+            <Route path="structure" element={<Structure />} />
+            <Route path="privacy-type" element={<PrivacyType />} />
+            <Route path="location" element={<Location />} />
+            <Route path="floor-plan" element={<Floor />} />
+          </Route>
+          <Route path="/step2">
+            <Route index element={<Step2 />} />
+            <Route path="animities" element={<Animities />} />
+            <Route path="photos" element={<Photos />} />
+            <Route path="title" element={<Title />} />
+            <Route path="description" element={<Description />} />
+          </Route>
+          <Route path="/step3">
+            <Route index element={<Step3 />} />
+            <Route path="visibility" element={<Visibility />} />
+            <Route path="price" element={<Price />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
