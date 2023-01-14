@@ -1,21 +1,24 @@
-import React, { Children, useState } from 'react'
+import React, { Children, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { floorData } from '../../../../data';
 import { animation } from '../../../../variants'
 import { motion, variants } from "framer-motion"
 const Floor = () => {
-    const [data, setData] = useState(floorData);
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        if (floorData["length"]) {
+            setData(floorData);
+        }
+    }, [])
     const handliClick = (id) => {
-
-        // setData(increaseVal)
-
         setData(data?.map((item) => (
-            (item.id === id) ? { ...item, value: item.value + 1 } : item
+            item.id === id ?
+                { ...item, value: item.value + 1 } : item
         )))
-        console.log(data)
     }
     const handliClickMinus = (id) => {
-        setData(data?.find((item) => (
+        setData(data?.map((item) => (
             item.id === id ? { ...item, value: item.value - 1 } : item
         )))
     }
@@ -30,7 +33,7 @@ const Floor = () => {
                     You'll add more details later, like bed types.
                 </span>
                 <div className='w-full h-[280px] flex flex-col px-8'>
-                    {floorData.map((item) => (
+                    {data?.map((item) => (
                         <div key={item.id}>
                             <div key={item.id} className="flex flex-row justify-between items-center mt-6 mb-6 md:mt-7 md:mb-7">
                                 <span className='text-xl text-[#444]'>{item.name}</span>

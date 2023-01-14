@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import video1 from "../../../assets/video/vd1.mp4"
+import { videoAnimation } from '../../../variants';
+import { motion } from 'framer-motion';
 const Step1 = () => {
     const navigate = useNavigate();
     console.log(video1)
@@ -18,11 +20,11 @@ const Step1 = () => {
                         In this step, we'll ask you which type of property you have and if guests will book the entire place or just a room. Then let us know the location and how many guests can stay.
                     </span>
                 </div>
-                <div className=' sm:w-full md:w-1/2 flex flex-col gap-10  '>
+                <motion.div variants={videoAnimation} initial={"open"} animate={"closed"} className=' sm:w-full md:w-1/2 flex flex-col gap-10  '>
                     <video autoPlay preload='auto' playsInline>
                         <source src={video1} type="video/mp4" />
                     </video>
-                </div>
+                </motion.div>
 
             </div>
             <div className=' fixed bottom-0 bg-[#fff] w-full '>

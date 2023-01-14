@@ -19,17 +19,15 @@ const Visibility = () => {
                 <span className='text-xl text-gray-400'>
                     After your first guest, anyone can book your place. Learn more
                 </span>
-                <div className='flex flex-row justify-start items-start flex-wrap gap-4 '>
+                <div className='flex flex-col gap-4 '>
                     {visibilityData?.map((item) => (
-                        <div key={item.id} onClick={clickHandle} className="flex items-center">
-                            <div className={` ${!selected === item.selected ? "border-[#333] rounded-xl" : ""} flex flex-row gap-3 justify-start items-start p-2 border-[2px] w-[300px] sm:w-[450px] md:w-[600px] h-[110px] hover:border-[#333] rounded-xl cursor-pointer `}>
-                                <div>
-                                    <input type="radio" name='radio' className=" rounded-full h-4 w-4 border border-gray-300 bg-white focus:bg-gray-800 checked:border-gray-600 focus:outline-none  cursor-pointer" />
-                                </div>
-                                <div className='flex flex-col'>
-                                    <span className='text-lg sm:text-lg md:text-xl text-[#333] font-semibold'>{item.title}</span>
-                                    <span className=' text-sm md:text-base text-gray-600'>{item.text}</span>
-                                </div>
+                        <div key={item.id} className={` ${!selected === item.selected ? "border-[#333] rounded-xl" : ""} flex flex-row gap-3 justify-start items-start p-2 border-[2px] w-[300px] sm:w-[450px] md:w-[600px] h-[110px] hover:border-[#333] rounded-xl cursor-pointer `}>
+                            <div className='accent-black'>
+                                <input type="radio" name='radio' className=" rounded-full h-4 w-4 border border-gray-300 bg-white focus:bg-gray-800 checked:border-gray-600 focus:outline-none  cursor-pointer" />
+                            </div>
+                            <div className='flex flex-col'>
+                                <span className='text-lg sm:text-lg md:text-xl text-[#333] font-semibold'>{item.title}</span>
+                                <span className=' text-sm md:text-base text-gray-600'>{item.text}</span>
                             </div>
                         </div>
                     ))}

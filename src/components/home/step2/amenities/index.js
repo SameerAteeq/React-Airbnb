@@ -18,7 +18,7 @@ const Animities = () => {
                 <div className='flex flex-row justify-center md:justify-start items-start flex-wrap gap-4 max-w-[700px]'>
                     {StructureData?.slice(0, 8)?.map((item) => (
                         <div key={item.id} className="">
-                            <div className='px-4 flex flex-col flex-wrap items-start justify-center border-[2px] w-[160px] h-[100px] sm:w-[250px] md:w-[200px] hover:border-[#333] rounded-xl cursor-pointer '>
+                            <div className='px-4 flex flex-col flex-wrap items-start justify-center border-[2px] w-[160px] h-[100px] sm:w-[220px] md:w-[200px] hover:border-[#333] rounded-xl cursor-pointer '>
                                 <span className='text-3xl mb-1'>{item.icon}</span>
                                 <span>{item.name}</span>
                             </div>
@@ -31,7 +31,7 @@ const Animities = () => {
                 <div className='flex flex-row justify-center md:justify-start items-start flex-wrap gap-4 max-w-[700px]'>
                     {StructureData?.slice(0, 8)?.map((item) => (
                         <div key={item.id} className="">
-                            <div className='px-4 flex flex-col flex-wrap items-start justify-center border-[2px] w-[160px] h-[100px] sm:w-[250px] md:w-[200px] hover:border-[#333] rounded-xl cursor-pointer '>
+                            <div className='px-4 flex flex-col flex-wrap items-start justify-center border-[2px] w-[160px] h-[100px] sm:w-[220px] md:w-[200px] hover:border-[#333] rounded-xl cursor-pointer '>
                                 <span className='text-3xl mb-1'>{item.icon}</span>
                                 <span>{item.name}</span>
                             </div>

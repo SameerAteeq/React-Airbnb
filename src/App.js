@@ -15,6 +15,8 @@ import Description from "./components/home/step2/description/index.js";
 import Step3 from "./components/home/step3/index.js";
 import Visibility from "./components/home/step3/visibility/index.js";
 import Price from "./components/home/step3/price/index.js";
+import Legal from "./components/home/step3/legal/index.js";
+import Receipt from "./components/home/step3/receipt/index.js";
 function App() {
   return (
     <>
@@ -39,6 +41,8 @@ function App() {
             <Route index element={<Step3 />} />
             <Route path="visibility" element={<Visibility />} />
             <Route path="price" element={<Price />} />
+            <Route path="legal" element={<Legal />} />
+            <Route path="receipt" element={<Receipt />} />
           </Route>
         </Routes>
       </BrowserRouter>

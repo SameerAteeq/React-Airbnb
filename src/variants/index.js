@@ -23,3 +23,18 @@ export const MapTransition = {
     },
     closed: { opacity: 1, y: 0, transition: { duration: 1.5 } }
 }
+
+export const videoAnimation = {
+    open: {
+        opacity: 0,
+        transition: {
+            type: "spring", satisfies: 300, damping: 24
+        }
+    },
+    closed: {
+        opacity: 1,
+        transition: {
+            duration: 1.5
+        }
+    }
+}
