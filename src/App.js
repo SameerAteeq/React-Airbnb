@@ -17,6 +17,8 @@ import Visibility from "./components/home/step3/visibility/index.js";
 import Price from "./components/home/step3/price/index.js";
 import Legal from "./components/home/step3/legal/index.js";
 import Receipt from "./components/home/step3/receipt/index.js";
+import Login from "./components/Auth/login/index.js";
+import Signup from "./components/Auth/signup/index.js";
 function App() {
   return (
     <>
@@ -44,6 +46,9 @@ function App() {
             <Route path="legal" element={<Legal />} />
             <Route path="receipt" element={<Receipt />} />
           </Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+
         </Routes>
       </BrowserRouter>
     </>

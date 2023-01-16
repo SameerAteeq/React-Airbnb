@@ -10,77 +10,92 @@ export const StructureData = [
     {
         id: 1,
         name: "House",
-        icon: <AiOutlineHome />
+        icon: <AiOutlineHome />,
+        selected: false
     },
     {
         id: 2,
         name: "Apartment",
-        icon: <MdOutlineHomeWork />
+        icon: <MdOutlineHomeWork />,
+        selected: false
     },
     {
         id: 3,
         name: "Barn",
-        icon: <BiHomeSmile />
+        icon: <BiHomeSmile />,
+        selected: false
     },
     {
         id: 4,
         name: "Bed & breakfast",
-        icon: <SlCup />
+        icon: <SlCup />,
+        selected: false
     },
     {
         id: 5,
         name: "Boat",
-        icon: <RiSailboatLine />
+        icon: <RiSailboatLine />,
+        selected: false
     },
     {
         id: 6,
         name: "Cabin",
-        icon: <MdOutlineCabin />
+        icon: <MdOutlineCabin />,
+        selected: false
     },
     {
         id: 7,
         name: "Camper/RV",
-        icon: <TbBus />
+        icon: <TbBus />,
+        selected: false
     },
     {
         id: 8,
         name: "Casa Particular",
-        icon: <AiOutlineHome />
+        icon: <AiOutlineHome />,
+        selected: false
     },
     {
         id: 9,
         name: "Castle",
-        icon: <AiOutlineHome />
+        icon: <AiOutlineHome />,
+        selected: false
     },
     {
         id: 10,
         name: "Cave",
-        icon: <MdHouseSiding />
+        icon: <MdHouseSiding />,
+        selected: false
     },
     {
         id: 11,
         name: "Container",
-        icon: <AiOutlineHome />
+        icon: <AiOutlineHome />,
+        selected: false
     },
     {
         id: 12,
         name: "Cycladic Home",
-        icon: <MdOutlineHouse />
+        icon: <MdOutlineHouse />,
+        selected: false
     },
     {
         id: 13,
         name: "Cycladic Home",
-        icon: <AiOutlineHome />
+        icon: <AiOutlineHome />,
+        selected: false
     },
     {
         id: 14,
         name: "Hotel",
-        icon: <AiOutlineHome />
+        icon: <AiOutlineHome />,
+        selected: false
     },
     {
         id: 15,
         name: "Guest House",
-        icon: <AiOutlineHome />
+        icon: <AiOutlineHome />,
+        selected: false
     },
 ]
 

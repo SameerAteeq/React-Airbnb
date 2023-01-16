@@ -1,6 +1,6 @@
 export const animation = {
     hidden: {
-        y: "100%",
+        y: "10%",
         opacity: 0,
         transition: {
             type: "spring", bounce: 0.3

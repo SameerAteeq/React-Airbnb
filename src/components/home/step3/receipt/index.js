@@ -1,15 +1,16 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link, useNavigate } from 'react-router-dom'
-import { animation } from '../../../../variants'
-import { BsClipboardCheck } from 'react-icons/bs'
+import { animation, videoAnimation } from '../../../../variants'
+import { BsCalendarEvent, BsClipboardCheck } from 'react-icons/bs'
 import image from "../../../../assets/images/receiptimg.jpg";
 import { AiFillStar } from 'react-icons/ai'
+import { FaPen } from 'react-icons/fa'
 const Receipt = () => {
     const navigate = useNavigate();
     return (
         <div className='flex flex-col h-full justify-center items-center relative '>
-            <motion.div initial={"hidden"} animate={"show"} variants={animation} className='px-3 justify-center flex flex-col items-start  gap-1 pt-[50px] sm:px-7  md:px-[10px] md:w-[700px]  pb-[98px]  '>
+            <motion.div initial={"open"} animate={"closed"} variants={videoAnimation} className='px-3 justify-center flex flex-col items-start  gap-1 pt-[50px] sm:px-7  md:px-[10px] md:w-[700px]  pb-[98px]  '>
                 <h1 className='text-[#333] text-2xl md:text-5xl font-semibold mb-4'>
                     Review your listing
                 </h1>
@@ -35,7 +36,7 @@ const Receipt = () => {
                             </div>
                             <div className='flex flex-col gap-8'>
                                 <div className='flex justify-start items-start flex-row gap-6 '>
-                                    <BsClipboardCheck className='text-6xl ' />
+                                    <BsClipboardCheck className='text-5xl ' />
                                     <div className='flex flex-col items-start gap-1'>
                                         <span className='text-lg font-semibold'>
                                             Verify a few details and publish
@@ -46,24 +47,24 @@ const Receipt = () => {
                                     </div>
                                 </div>
                                 <div className='flex justify-start items-start flex-row gap-6 '>
-                                    <BsClipboardCheck className='text-6xl ' />
+                                    <BsCalendarEvent className='text-5xl ' />
                                     <div className='flex flex-col items-start gap-1'>
                                         <span className='text-xl font-semibold'>
-                                            Verify a few details and publish
+                                            Set up your calendar
                                         </span>
                                         <span className='text-[16px] w-full leading-none'>
-                                            We’ll let you know if you need to confirm your identity or register with the local government.
+                                            Choose which dates your listing is available. It will be visible 24 hours after you publish.
                                         </span>
                                     </div>
                                 </div>
                                 <div className='flex justify-start items-start flex-row gap-6 '>
-                                    <BsClipboardCheck className='text-6xl ' />
+                                    <FaPen className='text-5xl ' />
                                     <div className='flex flex-col items-start gap-1'>
                                         <span className='text-xl font-semibold'>
-                                            Verify a few details and publish
+                                            Adjust your settings
                                         </span>
                                         <span className='text-[16px] w-full leading-none'>
-                                            We’ll let you know if you need to confirm your identity or register with the local government.
+                                            Set house rules, select a cancellation policy, choose how guests book, and more.
                                         </span>
                                     </div>
                                 </div>

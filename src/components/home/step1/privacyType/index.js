@@ -1,18 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion, variants } from 'framer-motion'
 import { Link, useNavigate } from 'react-router-dom'
 import { PrivacyTypeData } from '../../../../data'
 import { animation } from '../../../../variants'
 const PrivacyType = () => {
-    const [data, setData] = useState(PrivacyTypeData);
-    console.log(data, "data")
+    const [data, setData] = useState([]);
 
+    useEffect(() => {
+        setData(PrivacyTypeData)
+    }, [])
     const navigate = useNavigate()
     const clickHandle = (id) => {
-        const selectedCount = data?.filter((i) => i.selected).length;
-        if (selectedCount === 1) {
-            return
-        }
+        // const selectedCount = data?.filter((i) => i.selected).length;
+        // if (selectedCount === 1) {
+        //     return
+        // }
         setData(data?.map((item) => (
             item.id === id
                 ? { ...item, selected: !item.selected } : item
@@ -27,9 +29,9 @@ const PrivacyType = () => {
                     What type of place will guests have?
                 </h1>
                 <div className='flex flex-row justify-center items-center flex-wrap gap-4'>
-                    {PrivacyTypeData.map((item) => (
+                    {data.map((item) => (
                         <div key={item.id} onClick={() => clickHandle(item.id)} className="">
-                            <div data-id={item.id} className={` ${item.selected && " bg-gray-400 border border-[#333] rounded-xl"} flex flex-row gap-1 flex-wrap items-center justify-between px-4 border-[2px] w-[300px] sm:w-[450px] md:w-[600px] h-[110px] hover:border-[#333] rounded-xl cursor-pointer `}>
+                            <div data-id={item.id} className={` ${item.selected ? "border border-[#333] rounded-xl" : ""} flex flex-row gap-1 flex-wrap items-center justify-between px-4 border-[2px] w-[300px] sm:w-[450px] md:w-[600px] h-[110px] hover:border-[#333] rounded-xl cursor-pointer `}>
                                 <div className='flex flex-col w-11/12 md:w-9/12 '>
                                     <span className='text-lg sm:text-lg md:text-xl text-[#333] font-semibold'>{item.title}</span>
                                     <span className=' text-md md:text-base text-gray-600'>{item.text}</span>
@@ -56,4 +58,4 @@ const PrivacyType = () => {
     )
 }
 
-export default PrivacyType
+export default PrivacyType;
