@@ -1,55 +1,32 @@
-import { blogList } from "./data.js";
-import { motion, Variants } from "framer-motion";
 import Home from "./components/home/index.js";
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Step1 from "./components/home/step1/index.js";
-import Structure from "./components/home/step1/structure/index.js";
-import PrivacyType from "./components/home/step1/privacyType/index.js";
-import Location from "./components/home/step1/location/index.js";
-import Floor from "./components/home/step1/floor/index.js";
-import Step2 from "./components/home/step2/index.js";
-import Animities from "./components/home/step2/amenities/index.js";
-import Photos from "./components/home/step2/photos/index.js";
-import Title from "./components/home/step2/title/index.js";
-import Description from "./components/home/step2/description/index.js";
-import Step3 from "./components/home/step3/index.js";
-import Visibility from "./components/home/step3/visibility/index.js";
-import Price from "./components/home/step3/price/index.js";
-import Legal from "./components/home/step3/legal/index.js";
-import Receipt from "./components/home/step3/receipt/index.js";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/Auth/login/index.js";
 import Signup from "./components/Auth/signup/index.js";
+import { Toaster } from "react-hot-toast";
+import BecomeHost from "./components/become-host/index.js";
+import Navbar from "./components/navbar/index.js";
+import Room from "./components/room/index.js";
+import ProfileHome from "./components/profileHome/index.js";
+import PlaceDetail from "./components/profileHome/placeDetail/index.js";
 function App() {
   return (
     <>
+      <Toaster />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/step1">
-            <Route index element={<Step1 />} />
-            <Route path="structure" element={<Structure />} />
-            <Route path="privacy-type" element={<PrivacyType />} />
-            <Route path="location" element={<Location />} />
-            <Route path="floor-plan" element={<Floor />} />
-          </Route>
-          <Route path="/step2">
-            <Route index element={<Step2 />} />
-            <Route path="animities" element={<Animities />} />
-            <Route path="photos" element={<Photos />} />
-            <Route path="title" element={<Title />} />
-            <Route path="description" element={<Description />} />
-          </Route>
-          <Route path="/step3">
-            <Route index element={<Step3 />} />
-            <Route path="visibility" element={<Visibility />} />
-            <Route path="price" element={<Price />} />
-            <Route path="legal" element={<Legal />} />
-            <Route path="receipt" element={<Receipt />} />
-          </Route>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-
-        </Routes>
+        <div className="flex flex-col h-full">
+          {/* <Navbar /> */}
+          <Routes>
+            <Route path="/">
+              <Route index element={<ProfileHome />} />
+              <Route path="/:id" element={<PlaceDetail />} />
+              <Route path="/become-a-host" element={<BecomeHost />} />
+              <Route path="overview" element={<Home />} />
+              <Route path="/:id/:tab" element={<Room />} />
+            </Route>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </>
   );
