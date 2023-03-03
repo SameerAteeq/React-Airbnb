@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { IoLocationSharp } from "react-icons/io5";
 import { useParams } from "react-router-dom";
 import { placesData } from "../../../data";
 import ProfileNavbar from "../profileNavbar";
@@ -19,7 +20,10 @@ const PlaceDetail = () => {
     <div className="">
       <ProfileNavbar type="place" />
       <div className="mt-24 flex flex-col justify-center gap-3 lg:px-16 p-4 mx-auto w-full">
-        <h1 className="text-2xl text-gray-800 font-semibold">{place?.city}</h1>
+        <h1 className="text-2xl text-gray-800 font-semibold flex items-center underline cursor-pointer">
+          <IoLocationSharp />
+          {place?.city}
+        </h1>
         <div>
           <PlacePhotos data={place.img} />
         </div>

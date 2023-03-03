@@ -7,12 +7,16 @@ import NavItems from "./NavItems";
 import BottomNav from "./bottomNav";
 import { useNavigate } from "react-router-dom";
 
-const ProfileNavbar = ({ type }) => {
+const ProfileNavbar = ({ type, location }) => {
   const navigate = useNavigate();
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <>
-      <div className="fixed top-0 left-0 w-full shadow-lg z-10">
+      <div
+        className={`fixed top-0 left-0 w-full z-10  ${
+          location ? "md:block hidden" : ""
+        }`}
+      >
         <div className=" bg-white flex justify-between items-center w-full p-4 ">
           <div
             className="md:flex items-center hidden cursor-pointer"
@@ -22,18 +26,20 @@ const ProfileNavbar = ({ type }) => {
             <span className="text-[#FF5A5F] font-bold text-2xl">airbnb</span>
           </div>
 
-          <div className="flex justify-between items-center gap-5 w-full md:w-auto cursor-pointer bg-white p-2 px-4 rounded-3xl shadow-lg border">
-            <span>Any where</span>
-            <div className="border-l-2 h-6"></div>
-            <span>Any week</span>
-            <div className="border-l-2 h-6"></div>
-            <div className="flex items-center gap-2">
-              <span className="text-gray-400">Add guest</span>
-              <div className="bg-[#FF5A5F] text-white p-2 rounded-full">
-                <BsSearch />
+          {!location && (
+            <div className="flex justify-between items-center gap-5 w-full md:w-auto cursor-pointer bg-white p-2 px-4 rounded-3xl shadow-lg border">
+              <span>Any where</span>
+              <div className="border-l-2 h-6"></div>
+              <span>Any week</span>
+              <div className="border-l-2 h-6"></div>
+              <div className="flex items-center gap-2">
+                <span className="text-gray-400">Add guest</span>
+                <div className="bg-[#FF5A5F] text-white p-2 rounded-full">
+                  <BsSearch />
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           <div className="md:flex hidden items-center ">
             <span
@@ -56,8 +62,11 @@ const ProfileNavbar = ({ type }) => {
                   <span className="text-gray-700 font-thin hover:text-black cursor-pointer hover:bg-gray-200 p-2 inline-block w-full">
                     Trips
                   </span>
-                  <span className="text-gray-700 font-thin hover:text-black cursor-pointer hover:bg-gray-200 p-2 inline-block w-full">
-                    Help
+                  <span
+                    onClick={() => navigate("/wishlist")}
+                    className="text-gray-700 font-thin hover:text-black cursor-pointer hover:bg-gray-200 p-2 inline-block w-full"
+                  >
+                    Wishlist
                   </span>
                   <span className="text-gray-700 font-thin hover:text-black cursor-pointer hover:bg-gray-200 p-2 inline-block w-full">
                     Account

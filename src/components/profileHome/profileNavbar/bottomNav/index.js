@@ -45,7 +45,10 @@ const BottomNav = () => {
           <HiOutlineHomeModern className="text-2xl" />
           <li className="text-sm ">Accomadation</li>
         </div>
-        <div className="flex flex-col items-center text-gray-700 cursor-pointer hover:text-[#FF5A5F]">
+        <div
+          onClick={() => navigate("/wishlist")}
+          className="flex flex-col items-center text-gray-700 cursor-pointer hover:text-[#FF5A5F]"
+        >
           <BsHeart className="text-2xl" />
           <li className="text-sm ">Wishlist</li>
         </div>

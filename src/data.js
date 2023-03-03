@@ -491,7 +491,7 @@ export const placesData = [
   {
     id: 2,
     name: "Place Apartments",
-    city: "Span, Madrid",
+    city: "Glenwood Fort, Newzland",
     price: "32,653",
     rating: 6.1,
     img: [

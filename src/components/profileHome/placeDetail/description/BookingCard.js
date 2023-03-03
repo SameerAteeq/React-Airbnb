@@ -5,14 +5,14 @@ const BookingCard = () => {
     <div className="flex justify-center w-full ">
       <div className="flex flex-col gap-6 bg-white shadow-2xl border rounded-md p-4 w-full md:w-96">
         <h1 className="text-xl">Price $250 /per night</h1>
-        <div className="border border-gray-600">
-          <div className="flex">
-            <div className="p-1">
+        <div className="border border-gray-600 w-full">
+          <div className="flex w-full ">
+            <div className="p-1 w-1/2 flex flex-col">
               <label for="checkIn">Check in</label>
               <input type="date" name="checkIn" />
             </div>
-            <div className="border-r border-gray-600 h-auto"></div>
-            <div className="p-1">
+            <div className="border-r border-gray-600"></div>
+            <div className="p-1 w-1/2 flex flex-col">
               <label for="checkIn">Check Out</label>
               <input type="date" name="checkIn" />
             </div>

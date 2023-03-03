@@ -8,6 +8,7 @@ import Navbar from "./components/navbar/index.js";
 import Room from "./components/room/index.js";
 import ProfileHome from "./components/profileHome/index.js";
 import PlaceDetail from "./components/profileHome/placeDetail/index.js";
+import Wishlist from "./components/profileHome/wishlist/index.js";
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
               <Route path="/become-a-host" element={<BecomeHost />} />
               <Route path="overview" element={<Home />} />
               <Route path="/:id/:tab" element={<Room />} />
+              <Route path="/wishlist" element={<Wishlist />} />
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
